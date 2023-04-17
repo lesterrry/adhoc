@@ -12,10 +12,13 @@
 # from cltk.data.fetch import FetchCorpus
 # corpus = FetchCorpus('lat')
 # corpus.import_corpus('lat_models_cltk')
-#
+# exit()
+
 
 import sys
 from tabulate import tabulate
+
+VERSION = '0.1.0'
 
 RED = "\033[31m"
 ORG = "\033[33m"
@@ -34,6 +37,9 @@ text = None
 conf = {'definitions_enabled': False}
 
 argv = sys.argv
+if '-v' in argv or '--version' in argv:
+	print(f'Ad Hoc v{VERSION}')
+	exit()
 if len(argv) == 2:
 	print('Will run once with word from argv')
 	text = argv[1]
